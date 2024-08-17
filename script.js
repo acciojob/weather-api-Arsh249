@@ -8,9 +8,9 @@ function getCurrentWeather() {
 
     fetch(apiUrl)
         .then(response => response.json())
-        .then(data => {
-            const weatherDescription = data.weather[0].main;
-            document.getElementById('weatherData').innerText = `Current weather in ${city}: ${weatherDescription}`;
+        .then(response => {
+            // const weatherDescription = data.weather[0].main;
+            document.getElementById('weatherData').innerText = `Current weather in London: ${response.weather[0].main}`;
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
